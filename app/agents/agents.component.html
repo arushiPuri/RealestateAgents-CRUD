@@ -1,0 +1,14 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<h2>My agents</h2>
+
+<ul class="agents">
+  <li *ngFor="let agent of agents"
+    [class.selected]="agent === selectedAgent"
+    (click)="onSelect(agent)">
+    <span class="badge">{{agent.id}}</span> {{agent.name}} {{agent.contactDetails}}
+    <i class="material-icons" (click)="deleteAgent(agent.id)">delete</i>
+  </li>
+</ul>
+
+<app-agent-detail [agent]="selectedAgent"></app-agent-detail>

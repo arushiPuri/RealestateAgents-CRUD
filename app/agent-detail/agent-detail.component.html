@@ -1,0 +1,14 @@
+<div *ngIf="agent">
+
+  <h2>{{agent.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{agent.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="agent.name" placeholder="name"/>
+    </label>
+    <label>contact:
+      <input [(ngModel)]="agent.contactDetails" placeholder="contact"/>
+    </label>
+  </div>
+
+</div>
