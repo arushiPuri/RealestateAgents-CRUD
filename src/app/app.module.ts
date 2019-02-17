@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AgentsComponent } from './agents/agents.component';
 import { AgentDetailComponent } from './agent-detail/agent-detail.component';
 import { AgentExtrasComponent } from './agent-extras/agent-extras.component';
+import { AgentAddComponent } from './agent-add/agent-add.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     AgentsComponent,
     AgentDetailComponent,
-    AgentExtrasComponent
+    AgentExtrasComponent,
+    AgentAddComponent
   ],
   imports: [
     BrowserModule,
