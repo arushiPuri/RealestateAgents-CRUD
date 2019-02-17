@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Agent } from '../agent';
-// import { ActivatedRoute } from '@angular/router';
+import { AGENTS } from '../mock-agents'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-agent-extras',
@@ -9,10 +10,19 @@ import { Agent } from '../agent';
 })
 export class AgentExtrasComponent implements OnInit {
   @Input() agent: Agent;
+  agents = AGENTS;
+   selectedAgent = Agent[0]
+  
+  filterAgents = () => {
+    this.route.paramMap.subscribe(params => {
+      let agentId = parseInt(params.get('id'))
+      this.selectedAgent = AGENTS.filter(agent => agent.id === agentId)[0]
+    })
+  }
 
-  // constructor(private route: ActivatedRoute) { }
-  constructor() { }
+  constructor(private route: ActivatedRoute) {   }
 
   ngOnInit() {
+     this.filterAgents()
   }
 }
