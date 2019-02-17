@@ -11,18 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 export class AgentExtrasComponent implements OnInit {
   @Input() agent: Agent;
   agents = AGENTS;
-   selectedAgent = Agent[0]
-  
+  selectedAgent = Agent[0]
+
   filterAgents = () => {
     this.route.paramMap.subscribe(params => {
       let agentId = parseInt(params.get('id'))
-      this.selectedAgent = AGENTS.filter(agent => agent.id === agentId)[0]
+      this.selectedAgent = this.agents.filter(agent => agent.id === agentId)[0]
     })
   }
 
-  constructor(private route: ActivatedRoute) {   }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-     this.filterAgents()
+    this.filterAgents()
   }
 }

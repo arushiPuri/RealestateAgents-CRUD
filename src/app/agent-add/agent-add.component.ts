@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Agent } from '../agent';
 import { AGENTS } from '../mock-agents';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-agent-add',
@@ -17,7 +17,7 @@ export class AgentAddComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value);  
-    this.agents.push(f.value) 
+    f.value['id'] = parseInt(f.value['id'])
+    this.agents.push(f.value)
   }
 }

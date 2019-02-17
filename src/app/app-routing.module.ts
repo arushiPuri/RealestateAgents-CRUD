@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: AgentsComponent },
   { path: 'agent-extras/:id', component: AgentExtrasComponent },
   { path: 'agent-add', component: AgentAddComponent },
-  // { path: 'edit', component: AgentDetailComponent }
+  { path: 'agent-edit/:id', component: AgentDetailComponent }
 ];
 
 @NgModule({

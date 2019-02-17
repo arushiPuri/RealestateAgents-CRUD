@@ -8,9 +8,7 @@ import { AGENTS } from '../mock-agents';
   styleUrls: ['./agents.component.css']
 })
 export class AgentsComponent implements OnInit {
-
   agents = AGENTS;
-
   selectedAgent: Agent;
 
   constructor() { }
